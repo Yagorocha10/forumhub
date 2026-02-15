@@ -28,9 +28,40 @@ public class Topico {
     private String autor;
     private String curso;
 
+    public Topico(CadastroTopico cadastroTopico) {
+        this.titulo = cadastroTopico.titulo();
+        this.mensagem = cadastroTopico.mensagem();
+        this.dataCriacao =  cadastroTopico.dataCriacao();
+        this.estadoTopico = cadastroTopico.estadoTopico();
+        this.autor = cadastroTopico.autor();
+        this.curso = cadastroTopico.curso();
+    }
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public String getMensagem() {
+        return mensagem;
+    }
 
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
 
+    public EstadoTopico getEstadoTopico() {
+        return estadoTopico;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
 }
