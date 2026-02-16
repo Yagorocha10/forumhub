@@ -44,6 +44,14 @@ public class TopicoController {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity buscarTopicoPorId(@PathVariable Long id) {
+        var topico = topicoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DetalhamentosTopico(topico));
+
+
+    }
+
 
 
 }
