@@ -66,4 +66,30 @@ public class Topico {
     public String getCurso() {
         return curso;
     }
+
+    public void atualizarInformacoes(AtualizacaoTopico atualizacaoTopico) {
+
+
+        if (atualizacaoTopico.titulo() != null) {
+            this.titulo = atualizacaoTopico.titulo();
+        }
+
+        if (atualizacaoTopico.mensagem() != null) {
+            this.mensagem = atualizacaoTopico.mensagem();
+        }
+
+        if (atualizacaoTopico.dataCriacao() != null) {
+            this.dataCriacao = atualizacaoTopico.dataCriacao();
+        }
+
+        if (atualizacaoTopico.autor() != null) {
+            this.autor = atualizacaoTopico.autor();
+        }
+
+        if (atualizacaoTopico.curso() != null) {
+            this.curso = atualizacaoTopico.curso();
+        }
+
+
+    }
 }

@@ -1,9 +1,6 @@
 package com.example.forumhub.controller;
 
-import com.example.forumhub.domain.CadastroTopico;
-import com.example.forumhub.domain.DetalhamentosTopico;
-import com.example.forumhub.domain.Topico;
-import com.example.forumhub.domain.ListagemTopico;
+import com.example.forumhub.domain.*;
 import com.example.forumhub.repository.TopicoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +45,16 @@ public class TopicoController {
     public ResponseEntity buscarTopicoPorId(@PathVariable Long id) {
         var topico = topicoRepository.getReferenceById(id);
         return ResponseEntity.ok(new DetalhamentosTopico(topico));
+    }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity atualizarTopico(@PathVariable Long id, @RequestBody @Valid AtualizacaoTopico atualizacaoTopico) {
+        var topico = topicoRepository.getReferenceById(id);
+        topico.atualizarInformacoes(atualizacaoTopico);
+
+        return ResponseEntity.ok(new DetalhamentosTopico(topico));
+
 
 
     }
