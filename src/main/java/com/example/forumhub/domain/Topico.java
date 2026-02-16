@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "topicos")
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode(of = "id")
@@ -27,6 +26,9 @@ public class Topico {
     private EstadoTopico estadoTopico;
     private String autor;
     private String curso;
+
+    public Topico() {
+    }
 
     public Topico(CadastroTopico cadastroTopico) {
         this.titulo = cadastroTopico.titulo();
